@@ -11,17 +11,21 @@
         <div class="logo">
             Tutaj będzie logo
         </div>
-        <div class="timer">12:00:00</div>
+        <div id="clock">12:00:00</div>
         <div class="night-mode">
             Tutaj będzie night-mode
         </div>
     </header>
     <div class="content">
         <div class="title">What you have to do?</div>
-        <div class="add-task">Add new task here</div>
+        <div class="zadanie">
+        <input id="taskInput" type="text" name="type something" maxlength="50">
+        <button class="btn">Dodaj zadanie</button>
+        </div>
         <div class="list-of-task"></div>
     </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="index.js"></script>
 </body>
 </html>
