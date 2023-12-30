@@ -23,7 +23,25 @@
         <div class="title">Co chcesz dzisiaj zrobić?</div>
         <div class="zadanie">
         <input placeholder="Wpisz tutaj swoje zadanie..." id="taskInput" type="text" name="type something" maxlength="50">
-        <input class="range" type="range" min="0" max="2">
+        <div class="importance">Jak ważne jest to zadanie?
+            <form id="types">
+                <div class="type1">
+                    <div class="chose low-important">Mało ważne
+                    </div>
+                    <input type="radio" name="option" value="low" class="choice">
+                </div>
+                <div class="type2">
+                    <div class="chose medium-important">Ważne
+                    </div>
+                    <input type="radio" name="option" value="medium" class="choice">
+                </div>
+                <div class="type3">
+                    <div class="chose high-important">Priorytet
+                    </div>
+                    <input type="radio" name="option" value="high" class="choice">
+                </div>
+            </form>
+        </div>
         <button class="btn">Dodaj zadanie</button>
         </div>
         <div class="list-of-task"></div>

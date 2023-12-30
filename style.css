@@ -32,7 +32,7 @@ header {
 }
 
 .zadanie {
-    width:300px;
+    width:600px;
     border-radius: 20px;
     padding:10px;
     background-color: rgb(255, 255, 255);
@@ -53,40 +53,21 @@ input {
     padding-left: 10px;
 }
 
-.btn {
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(163, 163, 163);
-    border-radius: 25px;
-    margin:10px 0 10px 0;
-    height:50px;
-}
-
-.btn:hover {
-    background-color: aliceblue;
-}
-
-.list-of-task {
-    min-height: 100px;
-    background-color: rgb(255, 255, 255);
-    width:500px;
-    border-radius: 25px;
-    border:1px solid rgb(207, 207, 207);
-}
-
-.task {
-}
-
 .taskContainer {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding:0px 20px 0px 20px;
+    padding:0px 0px 0px 20px;
     font-size:1.3rem;
     border-radius: 25px;
-    width:calc(100% - 200px);
+    width:500px;
+    text-wrap:b;
     margin:10px auto 10px auto;
     font-weight: 600;
-    border:3px dashed rgb(20, 20, 19);
+}
+
+.task {
+    padding:10px;
 }
 
 input[type="range"] {
@@ -102,5 +83,85 @@ input[type="range"] {
 
   .taskButton {
     border-style: none;
-    background-color: #d3d3d3;
+    padding:20px;
+    background-color: #fff;
+    border-radius: 25px;
   }
+
+  .taskButton:hover {
+    animation: slidebackground 1s  0.2s forwards;
+  }
+
+  .importance {
+    text-align: center;
+  }
+
+  #types {
+    display: flex;
+    justify-content: space-around;
+    margin:25px 0 20px 0;
+  }
+
+.type1, .type2, .type3 {
+    padding:10px;
+    border-radius: 25px;
+    width:100px;
+}
+
+.type1 {
+    background-color: rgb(2, 160, 15);
+  }
+  
+  .type2 {
+    background-color: rgb(201, 181, 0);
+  }   
+
+  .type3 {
+    background-color: rgb(168, 34, 0);
+  }
+
+.low {
+    border:rgb(2, 160, 15) dashed 2px;
+}
+
+.medium {
+    border:rgb(201, 181, 0) dashed 2px;
+}
+
+.high {
+    border:rgb(168, 34, 0) dashed 2px;
+}
+
+/* dół */
+.btn {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 25px;
+    margin:10px 0 10px 0;
+    height:50px;
+}
+
+.btn:hover {
+    background-color: aliceblue;
+}
+
+.list-of-task {
+    min-height: 100px;
+    background-color: rgb(255, 255, 255);
+    width:550px;
+    border-radius: 25px;
+    border:1px solid rgb(207, 207, 207);
+}
+
+/* animacje */
+
+@keyframes slidebackground {
+    0% {
+        background-color: none;
+    }
+
+    100% {
+        background-color: green;
+    }
+    
+}

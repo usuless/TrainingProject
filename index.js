@@ -1,23 +1,21 @@
-// zegar
-function updateClock() {
-    const clockElement = document.getElementById('clock');
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
+function updateTimer() {
+  var now = new Date();
 
-    const formattedTime = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+  var endOfDay = new Date();
+  endOfDay.setHours(23, 59, 59, 999); 
 
-    clockElement.textContent = formattedTime;
-  }
+  var timeLeft = endOfDay - now;
 
-  function padZero(number) {
-    return number < 10 ? '0' + number : number;
-  }
+  var hours = Math.floor(timeLeft / (1000 * 60 * 60));
+  var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-  setInterval(updateClock, 1000);
+  document.getElementById('clock').innerHTML = 'Czas do końca dnia: ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+}
 
-  updateClock();
+setInterval(updateTimer, 1000);
+
+window.onload = updateTimer;
 
   // dodawanie zadań
 
@@ -34,7 +32,7 @@ function updateClock() {
     let container = $("<div>");
     let newDiv = $("<div>").text(inputValue);
     var button = $('<button>', {
-      text: 'Click Me',
+      text: 'Zrobione!',
       click: function deleteTask() {
 
     // usuwanie zadań
@@ -45,7 +43,21 @@ function updateClock() {
     });
 
     // dodawanie elemntów na stronę
-    
+
+    var radioInputs = document.querySelectorAll('input[name="option"]:checked');
+
+
+    switch (radioInputs[0].value) {
+          case "low":
+            $(container).addClass("low");
+            break; 
+          case "medium":
+            $(container).addClass("medium");
+            break;
+          case "high":
+            $(container).addClass("high");
+            break; 
+    }
     $(".list-of-task").append(container);
     $(container).append(newDiv);
     $(container).append(button);
