@@ -21,7 +21,16 @@ function updateClock() {
 
   // dodawanie zadań
 
+  let input = $("#taskInput").value;
+
   $(".btn").on("click", function getInput() {
     let inputValue = $("#taskInput").val();
-    console.log(inputValue)
+    if (inputValue == '') {
+        return;
+    } else {
+    let newDiv = $("<div>").text(inputValue);
+    $(".list-of-task").append(newDiv);
+    $(newDiv).addClass("task");
+    $("#taskInput").val('');
+    }
   })
