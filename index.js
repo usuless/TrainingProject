@@ -71,3 +71,25 @@ window.onload = updateTimer;
     }
   })
 
+
+
+  // sortowanie
+
+  $('input[name="sorting"]').on("click", function() {
+    $(".list-of-task").css({
+      'display':'grid',
+    })
+
+    $(".high").css({
+      'order':'1',
+    })
+
+    $(".medium").css({
+      'order':'2',
+    })
+
+    $(".low").css({
+      'order':'3',
+    })
+
+  })

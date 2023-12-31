@@ -61,9 +61,9 @@ input {
     font-size:1.3rem;
     border-radius: 25px;
     width:500px;
-    text-wrap:b;
     margin:10px auto 10px auto;
     font-weight: 600;
+    overflow: auto;
 }
 
 .task {
@@ -146,11 +146,14 @@ input[type="range"] {
 }
 
 .list-of-task {
-    min-height: 100px;
     background-color: rgb(255, 255, 255);
     width:550px;
     border-radius: 25px;
     border:1px solid rgb(207, 207, 207);
+}
+
+.sorting {
+    text-align: center;
 }
 
 /* animacje */
